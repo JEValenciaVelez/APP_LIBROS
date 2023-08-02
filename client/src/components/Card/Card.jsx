@@ -1,13 +1,21 @@
 import "./Card.css";
 
-const Card = () => {
+const Card = ({books}) => {
+
+    const allBooks = books.length > 0 ? books : [];
 
     return(
         <div className="Card">
-            <h1>Titulo</h1>
-            <img src="" alt="imagen" />
-            <h2>genero</h2>
-            <h2>año</h2>
+            {
+                allBooks.map(book => (
+                    <div key={book._id}>
+                         <h1>{book.title}</h1>
+                         <img src={book.image} alt="imagen" />
+                         <h2>{book.genres}</h2>
+                         <h2>{book.date}</h2>
+                    </div>
+                ))
+            }
         </div>
     )
 };

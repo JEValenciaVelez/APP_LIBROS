@@ -13,5 +13,10 @@ export function rootReducer (state= initialState, {type, payload}) {
                 ...state,
                 books: payload
             }
+
+        default:
+            return {
+                ...state
+            }
     }
 }
