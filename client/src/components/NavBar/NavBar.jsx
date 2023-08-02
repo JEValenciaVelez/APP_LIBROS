@@ -1,9 +1,15 @@
 import "./NavBar.css";
+import {Link} from "react-router-dom"
 
 const NavBar = () => {
 
     return(
         <nav className="nav-bar">
+
+            <Link to={`/`}>
+            <button>Inicio</button>
+            </Link>
+           
             <select name="" id="">
                 <option value="">Acciones para tus libros</option>
                 <option value="post">Crear</option>
