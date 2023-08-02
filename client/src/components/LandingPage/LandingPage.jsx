@@ -1,5 +1,6 @@
 import React from "react";
 import "./Landing.css";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const images = [
@@ -13,7 +14,11 @@ const LandingPage = () => {
     <div className="landing-container">
         <header className="landing-header">
             <h1 className="landing-title">Encuentra tus libros favoritos</h1>
+
+            <Link to={`/home`}>
             <button>Ingresar</button>
+            </Link>
+           
         </header>
       <div className="sidebar">
         {images.map((image, index) => (
