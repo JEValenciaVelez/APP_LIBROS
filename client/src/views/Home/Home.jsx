@@ -1,4 +1,5 @@
 import CardContainer from "../../components/CardContainer/CardContainer";
+import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
 
@@ -12,7 +13,9 @@ const Home = () => {
             <main>
                 <CardContainer />
             </main>
-            <footer></footer>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     )
 };
