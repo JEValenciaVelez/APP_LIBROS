@@ -11,7 +11,7 @@ const Card = ({books}) => {
                     <div className="card" key={book._id}>
                          <h1>{book.title}</h1>
                          <img src={book.image} alt="imagen" />
-                         <h2>{book.genres}</h2>
+                         <h2>{book.genres.join(", ")}</h2>
                          <h2>{book.date}</h2>
                     </div>
                 ))

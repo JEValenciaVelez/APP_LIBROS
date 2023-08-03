@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_BOOKS } from "./types";
+import { CREATE_BOOK, GET_BOOKS } from "./types";
 
 
 export function getBooks () {
@@ -10,6 +10,22 @@ export function getBooks () {
             dispatch({type:GET_BOOKS, payload: data});
         }catch(error){
             console.error(error.message);
+        }
+    }
+}
+
+export function postBooks (form) {
+    return async (dispatch) => {
+        console.log("form en la action->",form)
+        try{
+            const response = await axios.post("http://localhost:3001/books", form);
+            const data = response.data;
+            console.log("data ne la action->",data)
+            dispatch({type:CREATE_BOOK, payload: data});
+            alert("Libro creado !");
+        }catch(error){
+            console.error(error.message);
+            alert(error.message);
         }
     }
 }

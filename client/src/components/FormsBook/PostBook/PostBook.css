@@ -1,0 +1,60 @@
+/* Estilos para el formulario */
+.full {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Estilos para el título del formulario */
+  .full h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el contenedor principal del formulario */
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Estilos para las etiquetas de campos obligatorios */
+  .main span {
+    font-size: 12px;
+    color: red;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .main input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el campo de entrada de año */
+  .main input[name="date"] {
+    width: 100px;
+  }
+  
+  /* Estilos para el botón de envío (opcional) */
+  .main button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el botón de envío cuando se pasa el cursor sobre él (opcional) */
+  .main button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,4 +1,4 @@
-import { GET_BOOKS } from "./types";
+import { CREATE_BOOK, GET_BOOKS } from "./types";
 
 
 const initialState = {
@@ -14,9 +14,13 @@ export function rootReducer (state= initialState, {type, payload}) {
                 books: payload
             }
 
-        default:
+        case CREATE_BOOK:
             return {
-                ...state
-            }
+                ...state,
+                books: [...state.books, payload]
+            }    
+
+        default:
+            return state;
     }
 }
