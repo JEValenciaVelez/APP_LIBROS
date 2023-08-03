@@ -18,7 +18,14 @@ export function getBooks () {
 export function getBook (title) {
     return async (dispatch) => {
         try{
-            dispatch({type:GET_BOOK_BY_NAME, payload: title});
+            if(title){
+                dispatch({type:GET_BOOK_BY_NAME, payload: title});
+            }else{
+                const response = await axios.get("http://localhost:3001/books");
+            const data = response.data;
+            dispatch({type:GET_BOOKS, payload: data});
+            }
+            
         }catch(error){
             console.error(error.message);
         }
