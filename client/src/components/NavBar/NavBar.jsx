@@ -1,8 +1,15 @@
 
+import { useState } from "react";
 import "./NavBar.css";
 import {Link, useNavigate} from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { getBook, getBooks } from "../../redux/actions";
 
 const NavBar = () => {
+
+    const [title, setTitle] = useState("");
+
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
@@ -15,6 +22,12 @@ const NavBar = () => {
             navigate("/");
         }
       };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(title)
+        dispatch(getBook(title));
+    }
 
     return(
         <nav className="nav-bar">
@@ -29,10 +42,12 @@ const NavBar = () => {
                 <option value="put">Actualizar</option>
                 <option value="delete">Borrar</option>
             </select>
+            <button type="submit" onClick={handleSubmit}>Buscar</button>
             <input 
+            onChange={(e)=>setTitle(e.target.value)}
             name="searchBar" 
             type="text" 
-            placeholder="Titulo del libro" 
+            placeholder=" Buscar por titulo de libro" 
             />
         </nav>
     )

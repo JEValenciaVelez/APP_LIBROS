@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CREATE_BOOK, GET_BOOKS } from "./types";
+import { CREATE_BOOK, GET_BOOKS, GET_BOOK_BY_NAME } from "./types";
 
 
 export function getBooks () {
@@ -13,6 +13,18 @@ export function getBooks () {
         }
     }
 }
+
+
+export function getBook (title) {
+    return async (dispatch) => {
+        try{
+            dispatch({type:GET_BOOK_BY_NAME, payload: title});
+        }catch(error){
+            console.error(error.message);
+        }
+    }
+}
+
 
 export function postBooks (form) {
     return async (dispatch) => {
