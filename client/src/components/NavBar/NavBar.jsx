@@ -17,9 +17,9 @@ const NavBar = () => {
         if (e.target.value === "post") {
           navigate("/postBook");
         }else if(e.target.value === "put"){
-            navigate("/");
+            navigate("/put");
         }else if(e.target.value === "delete"){
-            navigate("/");
+            navigate("/delete");
         }
       };
 

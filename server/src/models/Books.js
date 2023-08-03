@@ -9,7 +9,10 @@ const BookShema = new Schema({
 
     image : {
         type: String,
-        
+        match: [
+            /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
+            'Please Enter a valid URL',
+        ],
     },
 
     author: {

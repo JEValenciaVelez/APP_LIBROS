@@ -5,18 +5,18 @@ const putBook = async (req, res) => {
     const query = {};
     try{
         if(!title) throw new Error("Must provided an title");
-        if(image){
+        if(image.length>1){
             query.image = image ;
         }
-        if(author){
+        if(author.length>1){
             query.author = author;
         }
 
-        if(genres){
+        if(genres.length>1){
             query.genres = genres;
         }
 
-        if(date){
+        if(date.length>2){
             query.date = date;
         }
 

@@ -13,6 +13,7 @@ const Card = ({books}) => {
                          <img src={book.image} alt="imagen" />
                          <h2>{book.genres.join(", ")}</h2>
                          <h2>{book.date}</h2>
+                         <h2>{book.author}</h2>
                     </div>
                 ))
             }
