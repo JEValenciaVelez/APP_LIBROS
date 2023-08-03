@@ -29,7 +29,11 @@ const NavBar = () => {
                 <option value="put">Actualizar</option>
                 <option value="delete">Borrar</option>
             </select>
-            <input name="searchBar" type="text" placeholder="Titulo del libro" />
+            <input 
+            name="searchBar" 
+            type="text" 
+            placeholder="Titulo del libro" 
+            />
         </nav>
     )
 };

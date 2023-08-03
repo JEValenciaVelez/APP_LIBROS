@@ -1,3 +1,6 @@
+import "./Footer.css";
+
+
 const Footer = () => {
 
     return(
@@ -7,7 +10,6 @@ const Footer = () => {
                 src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/3AVGMNTGCVEWNAVYV6AHORYVRA.jpg"
                 alt="logo.png" 
                 />
-                {/* <span>Mira los mejores VideoGames !</span> */}
             </div>
             <div className="text">
                 <span> All rights reserved </span>
