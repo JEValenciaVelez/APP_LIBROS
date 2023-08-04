@@ -3,7 +3,7 @@ const Books = require("../../models/Books");
 
 const deleteBook = async (req, res) => {
     const {title} = req.body;
-    console.log({title})
+    //console.log({title})
     try{
         const deleteBook = await Books.findOneAndDelete({
             title
