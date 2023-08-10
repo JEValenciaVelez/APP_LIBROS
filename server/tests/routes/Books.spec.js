@@ -52,11 +52,15 @@ describe("Books routes", () => {
       expect(response.body).to.be.an.instanceof(Object);
       expect(response.body).to.have.property("title", "Juan backend Developer");
     });
-
+  
     it("should return an error when an empty object is sent", async () => {
-      const response = await agent.post("/books").send({});
-      expect(response.statusCode).to.be.equal(400);
-      expect(response.error.text).to.be.equal('{"error":"Missing data for book"}');
-    });
+        const response = await agent.post("/books").send({});
+        expect(response.statusCode).to.be.equal(400);
+        expect(response.body).to.be.an("array");
+        const errorMessages = response.body.map((error) => error.msg);
+        expect(errorMessages).to.include("Invalid value", "Title cannot be empty", "Author field cannot be empty", "Genres field cannot be empty", "Date cannot be empty", "If you provided a picture of the Book, it must be a valid Image.");
+      });
+      
   });
+  
 });
