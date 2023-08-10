@@ -41,7 +41,9 @@ describe("Book model", () => {
     });
 
     it("should work when it's a valid title", async () => {
-      await Book.create({ title: "Juan senior developer js", author: "Juan Esteban" });
+      await Book.create({ 
+        title: "Juan senior developer js", 
+        author: "Juan Esteban" });
     });
   });
 
