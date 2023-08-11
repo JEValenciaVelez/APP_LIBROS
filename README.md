@@ -19,7 +19,7 @@
        URL_DB=mongodb://PuertoDeMongDB/NombreBaseDeDatos
    ```
 
-4. Reemplazar **`URL_DB`** y **`PORT`** con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+4. Reemplazar **`URL_DB`** y **`PORT`** con tus propias credenciales para conectarte a mongoDB. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
 
 
 <br />
