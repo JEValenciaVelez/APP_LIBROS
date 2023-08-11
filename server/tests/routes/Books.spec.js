@@ -63,4 +63,49 @@ describe("Books routes", () => {
       
   });
   
+ describe("PUT /books", () => {
+  it("should update a book and get status 200 and the updated object", async () => {
+    // Create a book to be updated
+    const newBook = await Book.create(book1);
+
+    // Define the updated data
+    const updatedData = {
+      title: "Updated Book Title",
+      author: "Updated Author",
+    };
+
+    const response = await agent
+      .put("/books")
+      .send({ title: newBook.title, author: updatedData.author }); // Use title to identify the book
+
+    expect(response.statusCode).to.be.equal(200);
+    expect(response.body).to.be.an.instanceof(Object);
+    expect(response.body).to.have.property("author", updatedData.author);
+  });
+});
+
+
+describe("DELETE /books", () => {
+  it("should delete a book and get status 200", async () => {
+    // Create a book to be deleted
+    const newBook = await Book.create(book1);
+
+    const deleteData = {
+      title: newBook.title, // Use _id to identify the book
+    };
+
+    const response = await agent
+      .delete("/books")
+      .send(deleteData);
+
+    expect(response.statusCode).to.be.equal(200);
+    expect(response.body).to.deep.equal({ message: "book eliminado" });
+
+    // Check if the book is actually deleted from the database
+    const deletedBook = await Book.findOne(newBook.title);
+    expect(deletedBook).to.be.null;
+  });
+});
+
+
 });
